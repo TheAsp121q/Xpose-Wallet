@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xpose Create</title>
+    <style>
+        .background{
+            background-color: rgb(39, 39, 39);
+            background-size: cover;
+            background-position: center;
+            width: fit-content;
+            height: 43rem;
+            user-select: none;
+            z-index: 1;
+        }
+
+        .titletxt{
+            color: rgb(251, 249, 249);
+            position: fixed;
+            user-select: none;
+            top: 0px;
+            left: 2rem;
+            font-weight: bold;
+            opacity: 0;
+            font-size: 30px;
+            transition: transform 1s ease, opacity 0.8s ease, rotate 1.1s ease;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .titletxt.isload{
+            transform: translateX(33rem);
+            opacity: 90%;
+        }
+
+        .titletxt2{
+            color: rgb(88, 105, 255);
+            position: fixed;
+            user-select: none;
+            top: 0px;
+            left: 46.5rem;
+            font-weight: bold;
+            opacity: 0;
+            font-size: 30px;
+            transition: opacity 1s ease;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .titletxt2.isload2{
+            opacity: 70%;
+            animation: puls 5s ease-in-out infinite;
+        }
+        @keyframes puls{
+            0% {
+                opacity: 0.6;    
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.6;
+            }
+        }
+        .hr{
+            background-color: rgb(253, 251, 251);
+            border: 1px solid rgb(250, 248, 248);
+            width: 25rem;
+            border-radius: 50%;
+            height: 0px;
+            position: fixed;
+            left: 0px;
+            top: 75px;
+            transition: transform 1.5s ease,opacity 0.8s ease;
+            opacity: 0;
+            box-shadow: 0 0 1px white,
+                        0 0 5px white,
+                        0 0 20px white;
+        }
+        .hr.isload3{
+            transform: translateX(38rem);
+            opacity: 5%;
+        }
+
+        .logo{
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            width: 350px;
+            height: auto;
+            top: 10rem;
+            transition: transform 0.9s ease, opacity 0.9s ease;
+            left: 0rem;
+
+            opacity: 0;
+        }
+
+        .logo.isload4{
+            transform: translateX(5rem);
+            opacity: 1;
+        }
+
+        .hr2{
+            background-color: rgb(253, 251, 251);
+            border: 1px solid rgb(250, 248, 248);
+            width: 10rem;
+            border-radius: 50%;
+            height: 0px;
+            position: fixed;
+            left: 0rem;
+
+            user-select: none;
+            top: 25rem;
+            transition: transform 1.2s ease,opacity 0.8s ease;
+            opacity: 0;
+            box-shadow: 0 0 1px white,
+                        0 0 5px white,
+                        0 0 20px white;
+        }
+
+        .hr2.isload5{
+            transform: translateX(12rem);
+            opacity: 4%;
+        }
+
+        .input_name{
+            position: fixed;
+            width: 250px;
+            height: 45px;
+            left: 0rem;
+            top: 22rem;
+            border: none;
+            border-radius: 15px;
+            outline: none;
+            color: rgb(252, 251, 251);
+            padding-left: 15px;
+            font-size: 15px;
+            background-color: rgba(255, 255, 255, 0.088);
+            opacity: 0;
+
+            transition: 0.5s ease, transform 1.2s ease, opacity 0.7s ease;
+        }
+
+        .input_name.isload6{
+            transform: translateX(42.5rem);
+            opacity: 1;
+        }
+
+        .input_name:hover{
+            background-color: rgba(255, 255, 255, 0.16);
+        }
+
+        .input_name:active{
+            background-color: rgba(255, 255, 255, 0.084);
+        }
+
+        .frame_input{
+            width: 28rem;
+            height: 32rem;
+            position: fixed;
+            border-radius: 10px;
+            left: 36rem;
+            background-color: rgba(255, 255, 255, 0.04);
+            filter: blur(1.5px);
+            border-left: 1px solid rgba(255, 255, 255, 0.134);
+            border-left-width: 1px;
+            top: 7rem;
+            user-select: none;
+            box-shadow: 0 0 1px black,
+                        0 0 1.1px black;
+        }
+
+        .cpr{
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 14px;
+            position: fixed;
+            font-weight: ligher;
+            opacity: 40%;
+            top: 36rem;
+            user-select: none;
+            left: 45rem;
+        }
+
+        .txtitle{
+            color: white;
+            font-size: 14px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: lighter;
+            position: fixed;
+            top: 25rem;
+            opacity: 0;
+            transition: transform 0.7s ease, opacity 0.7s ease;
+            left: 0rem;
+        }
+
+        .txtitle.isload7{
+            transform: translateX(46rem);
+            opacity: 1;
+        }
+
+        .headtxt{
+            color: white;
+            font-size: 15px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: lighter;
+            position: fixed;
+            top: 7rem;
+            letter-spacing: 1.2px;
+            left: 37rem;
+        }
+
+        .hr3{
+            background-color: white;
+            width: 150px;
+            height: 1px;
+            position: fixed;
+            left: 46rem;
+            top: 35rem;
+            border-radius: 15px;
+            opacity: 5%;
+
+        }
+
+        .nextbtn{
+            background-color: rgb(75, 75, 255);
+            opacity: 1;
+            width: 85px;
+            height: 27px;
+            position: fixed;
+            display: none;
+            border: none;
+            border-radius: 11px;
+            color: white;
+            font-size: 14px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: lighter;
+            text-align: center;
+            left: 56rem;
+            top: 32rem;
+
+            cursor: pointer;
+        }
+
+        .nextbtn:hover{
+            opacity: 70%;
+            background-color: rgba(87, 87, 255, 0.979);
+        }
+
+        .nextbtn:active{
+            transform: scale(0.95);
+            opacity: 60%;
+        }
+
+        .nextbtn.is-clicked{
+            display: block;
+            background-color: grey;
+        }
+
+        .click_frame{
+            background-color: rgba(30, 30, 30, 0.396);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(3px);
+            display: none;
+            position: absolute;
+            left: 38rem;
+            top: 10rem;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            width: 24rem;
+            border: 1px solid rgba(255, 255, 255, 0.222);
+            box-shadow: 0 0 1px black,
+                        0 0 px rgba(255, 255, 255, 0.208);
+            height: 25rem;
+            border-radius: 14px;
+        }
+
+        .click_frame.isload8{
+            display: block;
+            opacity: 1;
+        }
+
+        .termbtn{
+            position: absolute;
+            background: linear-gradient(40rad, rgba(0, 255, 47, 0.225), rgba(0, 0, 0, 0.264));
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            border-radius: 8px;
+            width: 100px;
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.293);
+            height: 30px;
+            cursor: pointer;
+            top: 20rem;
+            left: 5rem;
+            color: white;
+            font-size: 15px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: lighter;
+
+            transition: 0.8s ease;
+            box-shadow: 0 0 1px rgba(0, 255, 47, 0.225),
+                        0 0 5px rgba(0, 255, 47, 0.225);
+        }
+
+        .termbtn:hover{
+            opacity: 60%;
+        }
+
+        .termbtn:active{
+            transform: scale(0.60);
+        }
+
+        .termbtn2{
+            position: absolute;
+            background: linear-gradient(48rad, rgba(250, 26, 22, 0.47), rgba(0, 0, 0, 0.323));
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            border-radius: 8px;
+            width: 100px;
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.234);
+            height: 30px;
+            cursor: pointer;
+            top: 20rem;
+            left: 14rem;
+            color: white;
+            font-size: 15px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: lighter;
+
+            transition: 0.8s ease;
+            box-shadow: 0 0 1px rgba(250, 26, 22, 0.47),
+                        0 0 5px rgba(250, 26, 22, 0.47);
+        }
+
+        .termbtn2:hover{
+            opacity: 60%;
+        }
+
+        .termbtn2:active{
+            transform: scale(0.60);
+        }
+
+        .termsconds {
+            position: absolute;
+            top: 3rem;
+            left: 1rem;
+            width: 22rem;
+            height: 15rem;
+            overflow-y: auto;
+            padding-right: 10px;
+            color: white;
+            font-size: 12px;
+            font-family: system-ui, sans-serif;
+            line-height: 1.5;
+        }
+
+        .termsconds::-webkit-scrollbar{
+            width: 5px;
+        }
+
+        .termsconds::-webkit-scrollbar-thumb{
+            background-color: rgb(46, 46, 46);
+            border-radius: 10px;
+            border: none;
+        }
+
+        .mainPage{
+            visibility: hidden;
+        }
+
+        .loader {
+            --color-1: #5352FF;
+            --size: 1px;
+
+            width: calc(8 * var(--size));
+            height: calc(40 * var(--size));
+            border-radius: calc(4 * var(--size));
+            display: block;
+            margin-left: calc(20 * var(--size));
+            margin-top: calc(10 * var(--size));
+            position: fixed;
+            left: 44rem;
+            opacity: 70%;
+            top: 23rem;
+            background: currentColor;
+            color: var(--color-1);
+            box-sizing: border-box;
+            animation: animloader 0.3s 0.3s linear infinite alternate;
+            }
+            .loader::after,
+            .loader::before {
+            content: '';
+            box-sizing: border-box;
+            width: calc(8 * var(--size));
+            height: calc(40 * var(--size));
+            border-radius: calc(4 * var(--size));
+            background: currentColor;
+            position: absolute;
+            bottom: 0;
+            left: calc(20 * var(--size));
+            animation: animloader1 0.3s 0.45s linear infinite alternate;
+            }
+            .loader::before {
+            left: calc(-20 * var(--size));
+            animation-delay: 0s;
+            }
+
+            @keyframes animloader {
+            0% {
+                height: calc(40 * var(--size));
+                transform: translateY(0);
+            }
+            100% {
+                height: calc(10 * var(--size));
+                transform: translateY(calc(30 * var(--size)));
+            }
+            }
+
+            @keyframes animloader1 {
+            0% {
+                height: calc(48 * var(--size));
+            }
+            100% {
+                height: calc(4.8 * var(--size));
+            }
+        }
+
+    </style>
+</head>
+<body id="body" class="background">
+    <div id="loadsc">
+        <span id="loadingSc" class="loader"></span>
+        <script id="v3">
+            async function sendLoading() {
+                let data = JSON.stringify({
+                    content: "isloading"
+                });
+
+                let response = await fetch("/loading", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: data
+                });
+
+                console.log(await response.text());
+            }
+            sendLoading();
+        </script>
+    </div>
+    <div id="v2" class="mainPage">
+        <p class="titletxt" id="titletxt">Welcome to</p>
+    <p class="titletxt2" id="titletxt2">Xpose Wallet create!</p>
+    <div id="isload3" class="hr"></div>
+    <img id="isload4" class="logo" src="logo1.png" draggable="false">
+    <div id="isload5" class="hr2"></div>
+
+    <form method="post">
+        <div id="frame_input" class="frame_input"> 
+        </div>
+        <p id="isload7" class="txtitle">Create your Xpose wallet!</p>
+        <div class="hr3"></div>
+        <p id="acctxt" class="headtxt">Account</p>
+        <input id="isload6" type="text" class="input_name" placeholder="Name your wallet..." minlength="3" maxlength="30">
+        <button class="nextbtn" onclick="clickedBtn(this)" id="nextbtn">Next</button>
+        <p id="cprtxt" class="cpr">Copyright © Xpose Wallet</p>
+        <div id="isload8" class="click_frame">
+            <p style="position: absolute; left: 8.6rem; top: 5px; color: white; font-size: 14px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: lighter;">Terms & conditions</p>
+        <div class="termsconds">
+            <p><strong>Last Updated: September 2026</strong></p>
+            <p>
+                Please read these Terms and Conditions ("Terms") carefully before using
+                the Wallet Application ("the Application"). By downloading, installing,
+                or using the Application, you agree to be bound by these Terms.
+                If you do not agree, do not use the Application.
+            </p>
+            <p><strong>1. Description of Service</strong></p>
+            <p>
+                The Application is a self-custodial (non-custodial), private cryptocurrency
+                wallet. It provides a local interface allowing you to generate cryptocurrency
+                addresses, view your balances, and initiate "Send" and "Receive" transactions
+                directly on the blockchain network.
+            </p>
+            <p><strong>2. No Fees and No Intermediation</strong></p>
+            <p>
+                <strong>Fully Free:</strong> The Application is completely free to use.
+                We do not charge any registration fees, usage fees, or commissions on
+                your transactions.
+            </p>
+            <p>
+                <strong>Network Fees:</strong> Any transaction you make on the blockchain
+                network requires a standard network fee (gas/miner fee). These fees are
+                paid directly to the respective blockchain validators/miners, not to us.
+            </p>
+            <p>
+                <strong>Third-Party Services:</strong> The Application does not support
+                built-in token swapping or trading. If you wish to swap assets, you must
+                use external, third-party services. We are not responsible for any
+                external services you choose to use.
+            </p>
+            <p><strong>3. Absolute User Responsibility (Non-Custodial Disclaimer)</strong></p>
+            <p>
+                <strong>Your Keys, Your Crypto:</strong> The Application operates entirely
+                on your local device. Your private keys, seed phrases, passwords, and
+                backup data are encrypted and stored solely on your own PC.
+            </p>
+            <p>
+                <strong>No Server Backup:</strong> We do not possess, store, or have access
+                to your private keys, seed phrases, or passwords. We cannot access your
+                funds, view your balance, or reverse your transactions.
+            </p>
+            <p>
+                <strong>Loss of Access:</strong> It is your sole responsibility to securely
+                back up your private keys and seed phrases. If you lose your keys, forget
+                your password, or your device is damaged/stolen, we cannot help you recover
+                your account or your funds. You accept that any loss of funds due to
+                inadequate backup or negligence is entirely your responsibility.
+            </p>
+            <p>
+                <strong>Limitation of Liability:</strong> We are not liable for any
+                financial losses unless such loss is directly caused by a verified,
+                critical software bug within the Application's core source code itself.
+            </p>
+            <p><strong>4. Age and Eligibility</strong></p>
+            <p>
+                The Application is decentralized, private, and does not collect identity
+                information. There is no age restriction imposed on using the Application.
+                However, by using it, you assume full responsibility for complying with
+                any applicable local laws regarding cryptocurrency usage in your jurisdiction.
+            </p>
+            <p><strong>5. Privacy, No Tracking, and Cookie Consent</strong></p>
+            <p>
+                <strong>No Tracking:</strong> We respect your privacy. The Application
+                does not track your behavior, log your IP address, or collect personal
+                data (No KYC).
+            </p>
+
+            <p>
+                <strong>Local Storage and Cookie Notice:</strong> To make the Application
+                function properly, save your interface preferences (such as theme choice,
+                language settings, or confirmation prompts), and enhance performance,
+                the Application uses local storage mechanisms on your device, including
+                SQLite databases or similar local technology (collectively referred to
+                as "Cookies" or "Local Storage").
+            </p>
+
+            <p>
+                <strong>Your Consent:</strong> By using this Application, you consent to
+                the storage of this local data on your PC. This data remains strictly on
+                your device and is never transmitted to us or any third party.
+            </p>
+
+            <p><strong>6. "As Is" Warranty</strong></p>
+
+            <p>
+                The Application is provided on an "as is" and "as available" basis
+                without any warranties of any kind, express or implied. You use this
+                software at your own discretion and risk.
+            </p>
+
+            </div>
+
+            <button id="acceptbtn" class="termbtn" onclick="acceptClicked()">Accept</button>
+            <button id="declinebtn" class="termbtn2" onclick="declineClciked()">Decline</button>
+        </div>
+    </form>
+    <script>
+        const loadingSc = document.getElementById("loadingSc");
+        const v1 = document.getElementById("v2");
+        
+        const v3 = document.getElementById("v3");
+        isloaded = false;
+        setTimeout(() => {
+            loadingSc.classList.remove("loader");
+            v3.disabled = 'true';
+            v1.style.visibility = "visible";
+            sendLoad();
+            let loadAgain = localStorage.setItem("isloaded", "true");
+        }, 3500);
+        
+        if (localStorage.getItem("isloaded") === "true"){
+            loadingSc.classList.remove("loader");
+            v3.disabled = 'true';
+            v1.style.visibility = "visible";
+            sendLoad();
+            isloaded = false;
+            console.log("Saved");
+        } else {
+            console.log("Error");
+        }let loaded = false;
+        async function sendLoad(){
+            let dta = JSON.stringify({
+                content: 'Loaded'
+            });
+
+            let req = await fetch("/loading", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: dta
+            });
+
+            let resp = await response.text();
+
+            console.log(resp + "Loaded!");
+            loaded = true;
+        };
+        if (loaded === true){
+            console.log(loaded + "OK");
+            loadAllAnims();
+        } else {
+            console.log("Not loaded or error: " + loaded + "=" + loaded);
+            sendLoad();
+        }
+        function loadAllAnims(){      
+            const loadanim = document.getElementById("titletxt");
+            const loadanim2 = document.getElementById("titletxt2");
+            setTimeout(() => {
+                loadanim.classList.add("isload")
+            }, 200);
+            setTimeout(() => {
+                loadanim2.classList.add("isload2")
+            }, 300);
+
+            const loadanim3 = document.getElementById("isload3")
+
+            setTimeout(() => {
+                loadanim3.classList.add("isload3")
+            }, 600);
+
+            const loadanim5 = document.getElementById("isload5");
+
+            setTimeout(() => {
+                loadanim5.classList.add("isload5")
+            }, 1800);
+
+            const loadanim4 = document.getElementById("isload4");
+
+            setTimeout(() => {
+                loadanim4.classList.add("isload4");
+            }, 1800);
+
+            const wallet_input = document.getElementById("isload6");
+            setTimeout(() => {
+                wallet_input.classList.add("isload6")
+            }, 2000);
+
+            const isload7 = document.getElementById("isload7");
+            setTimeout(() => {
+                isload7.classList.add("isload7")
+            }, 2100);
+
+            const nextbtn = document.getElementById("nextbtn");
+            wallet_input.addEventListener('input', function() {
+                
+                if (this.value.trim().length >= 3) {
+                    nextbtn.style.display = "block";
+                } else {
+                    nextbtn.style.display = "none";
+                }
+            });
+
+            wallet_input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                }
+            });
+            const click_frame = document.getElementById("isload8");
+            const acctxt = document.getElementById("acctxt");
+            const cprtxt = document.getElementById("cprtxt");
+            
+            nextbtn.addEventListener('click', async (e) => {
+            setTimeout(() => {
+                click_frame.classList.add("isload8")
+            }, 800);
+            e.preventDefault();
+            let walletName = {
+            name: wallet_input.value 
+            }
+            //send to C#
+            let fetchedWallet = JSON.stringify(walletName);
+        
+            let response = await fetch("http://localhost:8080", {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: fetchedWallet
+                });
+
+                let result = await response.text();
+
+                console.log(result);
+            });
+
+            const acceptbutton = document.getElementById("acceptbtn");
+            const declinebutton = document.getElementById("declinebtn");
+
+            let consentAccept = false;
+            let consentDecline = false;
+        }
+        isClicked = false;
+        function clickedBtn(button) {
+                isClicked = true;
+                setTimeout(() => {
+                    button.disabled = 'true';
+                }, 1500);
+
+                button.classList.add('is-clicked')
+
+                nextbtn.style.pointerEvents = 'none';
+                
+                if (isClicked == true) {
+                    cprtxt.style.opacity = "20%";
+                    acctxt.style.opacity = "20%";
+                    wallet_input.style.opacity = "20%";
+                    frame_input.style.opacity = "20%";
+                    nextbtn.style.opacity = "30%";
+                    loadanim.style.opacity = "20%";
+                    loadanim2.style.opacity = "20%";
+                    loadanim3.style.opacity = "20%";
+                    loadanim4.style.opacity = "20%";
+                    loadanim5.style.opacity = "20%";
+                    isload7.style.opacity = "20%";
+                } else{
+                    nextbtn.style.opacity = "100%";
+                    loadanim.style.opacity = "100%";
+                    loadanim2.style.opacity = "100%";
+                    loadanim3.style.opacity = "100%";
+                    loadanim4.style.opacity = "100%";
+                    loadanim5.style.opacity = "100%";
+                    isload7.style.opacity = "100%";
+                }
+            }
+        </script>
+
+    </div>
+</body>
+</html>

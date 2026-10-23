@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xpose Wallet - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="background">
+    <div class="window">
+        <div class="frame">
+            <div class="headerframe">
+                <div class="hr1"></div>
+            </div>
+            <div id="wallet" class="wallet-name">
+                <p class="user">MainWallet</p>
+                <img id="arrow" class="arrow1" src="Assets/angle-down.png" onclick="arrowclick()">
+            </div>
+            <div class="bal">
+                
+            </div>
+            <p style="user-select: none; position: fixed; top: 168px; left: 25px; font-size: 12px; font-family: Arial; letter-spacing: 1.7px; background: linear-gradient(95rad, white, rgba(255, 247, 131, 0.563)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">TOTAL BALANCE</p>
+            <p class="baltxt" id="bal"> $0.00</p>
+        </div>
+        <p class="hl">-----------------------------------------------------</p>
+        <p style="user-select: none; position: fixed; top: 50px; left: 20px; font-family: Arial; font-size: 18px; color: white; font-weight: lighter; letter-spacing: 2px; z-index: 2;">Welcome Back,</p>
+        <p style="user-select: none; position: fixed; top: 68px; left: 22px; font-family: Arial; font-size: 25px; color: rgb(130, 106, 255); font-weight: bold; z-index: 2;" id="username">No Account!👋</p>
+        <p style="user-select: none; position: fixed; top: 125px; left: 25px; font-family: Arial; font-size: 13px; color: rgba(220, 220, 220, 0.605); font-weight: bold; z-index: 2;">Good to see you again.</p>
+        <div>
+            <button class="sendbtn">Send</button>
+            <div class="hrGen"></div>
+            <img class="sendimg" src="Assets/send.webp" draggable="false">
+
+            <button class="receivebtn">Receive</button>
+            <img class="receiveimg" src="Assets/2041296-200.png" draggable="false">
+        </div>
+        <div class="assetframe">
+            <p class="assetstxt">Assets</p>
+            <hr>
+        </div>
+        <div class="currencies">
+            <img class="btc" src="Assets/btcico.webp" draggable="false">
+            <p class="btctxt">Bitcoin</p>
+            <p class="btctxt2">BTC</p>
+            <p class="btcbalance">$0.00</p>
+            <p class="btcfloat">0.000000 BTC</p>
+        </div>
+        <div>
+            <p class="cpr">Copyright © Xpose Wallet</p>
+            <img class="logo" src="Assets/logo.png" draggable="false">
+        </div>
+        <div id="wlf" class="wlf">
+            <div class="txtwallets">
+                <p>MainWallet</p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+            <p style="color: white; padding-left: 14px; font-size: 12px; font-family: Arial;">Accounts</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

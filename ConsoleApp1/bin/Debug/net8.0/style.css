@@ -1,0 +1,444 @@
+.background{
+    background-color: rgb(36, 36, 36);
+}
+
+.h1headers{
+    color: white;
+    font-size: 22px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 2px;
+    z-index: 2;
+    padding-left: 10px;
+}
+
+.wallet-name{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 5px;
+    position: absolute;
+    left: 120px;
+    top: 15px;
+
+    cursor: pointer;
+    z-index: 4;
+    white-space: nowrap;
+}
+
+.user{
+    color: white;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 1px;
+    user-select: none;
+    margin: 0;
+    transition: 0.3s;
+}
+
+.user:hover{
+    opacity: 60%;
+}
+
+.user:active{
+    transform: scale(0.95);
+}
+
+.bal{
+    position: fixed;
+    left: 10px;
+    padding-left: 25px;
+    top: 170px;
+    user-select: none;
+
+    letter-spacing: 3px;
+    z-index: 1;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 0 1px white,
+                0 0 5px white;
+    background-color: white;
+    filter: blur(0.5px);
+    width: 283px;
+    height: 130px;
+    left: 13px;
+
+    opacity: 15%;
+    border-radius: 15px;
+}
+
+.baltxt{
+    background: linear-gradient(95rad, rgb(255, 255, 255), rgba(255, 255, 127, 0.508));
+    font-size: 31px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 3;
+    letter-spacing: 2.2px;
+
+    cursor: pointer;
+    padding-left: 20px;
+    user-select: none;
+    font-family: Arial;
+    font-weight: bold;
+    position: fixed;
+    top: 172px;
+
+    transition: 0.5s;
+}
+
+.baltxt:hover{
+    transform: scale(1.06);
+    opacity: 50%;
+}
+
+.baltxt:active{
+    transform: scale(0.85);
+}
+
+.windows{
+    background-color: white;
+    position: fixed;
+    width: 330px;
+    height: 565px;
+    z-index: 0;
+    top: 4px;
+    left: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 1px white,
+                0 0 3.5px white;
+}
+
+.frame{
+    background-image: url(Assets/peakpx.jpg);
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    width: 328px;
+    height: 560px;
+    z-index: 0;
+    top: 6px;
+    left: 6px;
+    border-radius: 10px;
+}
+
+.headerframe{
+    background-color: white;
+    box-shadow: 0 0 1px rgb(15, 15, 15),
+                0 0 6px rgb(143, 142, 142);
+    border: 1px solid white;
+    position: fixed;
+    width: 315px;
+    height: 45px;
+    opacity: 20%;
+    z-index: 3;
+    top: 8px;
+    left: 12px;
+    border-radius: 15px;
+}
+
+.arrow1{
+    user-select: none;
+    -webkit-user-drag: none;
+    height: auto;
+    width: 10px;
+
+    transition: 0.1s;
+}
+
+.arrow1:active{
+    transform: rotate(180deg);
+    scale: 0.70;
+}
+
+.hr1{
+    position: fixed;
+    border: 1px solid rgb(246, 239, 239);
+    width: 85px;
+    height: 0px;
+    border-radius: 20px;
+    z-index: 0;
+    left: 125px;
+    top: 43px;
+}
+
+.welcomeback{
+    position: fixed;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+}
+
+.sendbtn{
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    width: 90px;
+    height: 37px;
+    border: 1px solid whitesmoke;
+    text-decoration: none; 
+    z-index: 2; cursor: pointer; 
+    user-select: none; 
+    position: fixed; top: 246px; 
+    left: 60px; 
+    font-family: Arial; 
+    padding-left: 35px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.764);
+    top: 250px;
+    box-shadow: 0 0 1px rgb(107, 107, 107),
+                0 0 4px rgb(250, 250, 250);
+            
+    user-select: none;
+    cursor: pointer;
+    left: 20px;
+    border-radius: 15px;
+    z-index: 3px;
+    transition: 0.7s;
+    opacity: 40%;
+}
+
+.sendbtn:hover{
+    transform: scale(1.04);
+    opacity: 100%;
+}
+
+.sendbtn:active{
+    transform: scale(0.85);
+}
+
+.sendimg{
+    position: fixed;
+    z-index: 2;
+    width: 22px;
+    user-select: none;
+    cursor: pointer;
+    pointer-events: none;
+    top: 258px;
+    left: 30px;
+}
+
+.hrGen{
+    position: fixed;
+    border: 1px solid rgb(246, 239, 239);
+    width: 140px;
+    height: 0px;
+    opacity: 10%;
+    border-radius: 26px;
+    z-index: 0;
+    left: 28px;
+    top: 159px;
+}
+
+.receivebtn{
+    position: fixed;
+    background-color: white;
+    width: 110px;
+    height: 37px;
+    border: 1px solid whitesmoke;
+    text-decoration: none; 
+    z-index: 2; cursor: pointer; 
+    user-select: none; 
+    position: fixed; top: 246px; 
+    left: 60px; 
+    font-family: Arial; 
+    padding-left: 27px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.764);
+    top: 250px;
+    box-shadow: 0 0 1px rgb(107, 107, 107),
+                0 0 4px rgb(250, 250, 250);
+            
+    user-select: none;
+    cursor: pointer;
+    left: 200px;
+    border-radius: 25px;
+    opacity: 40%;
+    z-index: 3px;
+    transition: 0.7s;
+
+}
+
+.receivebtn:hover{
+    transform: scale(1.04);
+    opacity: 100%;
+}
+
+.receivebtn:active{
+    transform: scale(0.85);
+    opacity: 60%;
+}
+
+.receiveimg{
+    position: fixed;
+    z-index: 2;
+    width: 22px;
+    user-select: none;
+    cursor: pointer;
+    top: 258px;
+    left: 210px;
+    pointer-events: none;
+}
+
+.hl{
+    position: fixed;
+    user-select: none;
+    top: 215px;
+    color: rgb(186, 185, 185);
+    left: 18px;
+    opacity: 25%;
+}
+
+.assetframe{
+    position: fixed;
+    background-color: white;
+    z-index: 4;
+    width: 310px;
+    height: 225px;
+    left: 15px;
+    border-radius: 13px;
+    bottom: 185px;
+
+    opacity: 25%;
+    border-left: 1px solid rgba(0, 0, 0, 0.848);
+}
+
+.assetstxt{
+    color: black;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    padding-left: 10px;
+    user-select: none;
+}
+
+.btc{
+    position: fixed;
+    width: 32px;
+    top: 380px;
+    left: 30px;
+    z-index: 5;
+    user-select: none;
+}
+
+.btctxt{
+    position: fixed;
+    color: rgb(9, 9, 9);
+    font-size: 14px;
+    font-family: Arial;
+    padding-left: 60px;
+    
+    user-select: none;
+    bottom: 315px;
+}
+
+.btctxt2{
+    position: fixed;
+    color: rgb(204, 203, 203);
+    font-weight: bold;
+
+    opacity: 70%;
+    font-size: 10px;
+    font-family: Arial;
+    padding-left: 60px;
+    
+    user-select: none;
+    bottom: 306px;
+}
+
+.btcbalance{
+    position: fixed;
+    user-select: none;
+    color: black;
+    font-size: 14px;
+    bottom: 314px;
+    left: 273px;
+
+    font-family: Arial;
+}
+
+.btcfloat{
+    position: fixed;
+    color: rgb(195, 193, 193);
+    font-size: 11px;
+    bottom: 305px;
+    left: 236px;
+
+    opacity: 50%;
+    font-weight: bolder;
+    font-family: Arial;
+    user-select: none;
+}
+
+.cpr{
+    position: fixed;
+    user-select: none;
+    color: rgb(9, 9, 9);
+    font-size: 11px;
+    bottom: 157px;
+    left: 100px;
+
+    opacity: 60%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.logo{
+    position: fixed;
+    width: 80px;
+    bottom: 150px;
+    z-index: 4;
+    left: 255px;
+    opacity: 89%;
+    user-select: none;
+}
+
+.wlf{
+    position: fixed;
+    transition: 0.3s ease-in;
+    visibility: hidden;
+    opacity: 0;
+    width: 318px;
+    height: 350px;
+    background-color: rgb(34, 34, 34);
+    border-radius: 15px;
+    top: 58px;
+    box-shadow: 0 0 1px rgb(137, 136, 136),
+                0 0 3px white;
+                
+    left: 10px;
+    z-index: 5;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.wlf.open{
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+.txtwallets{
+    color: white;
+    position: fixed;
+    left: 100px;
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: lighter;
+    letter-spacing: 1.3px;
+    user-select: none;
+    transition: 0.8s;
+    display: inline-block;
+    z-index: 4;
+}
+
+.txtwallets p:hover {
+    background-color: #fafafb87;
+    border-radius: 3px;
+    width: 137px;
+    cursor: pointer;
+    height: 25px;
+    color: rgb(255, 255, 255);    
+    transition: 1s ease;         
+}
+
+.txtwallets p:active{
+    opacity: 60%;
+    transform: scale(0.90);
+}
